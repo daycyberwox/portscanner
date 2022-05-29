@@ -27,6 +27,7 @@ try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   #AF_INET is basically IPv4 and #SOCK_STREAM is basically the port
                 socket.setdefaulttimeout(1) #attempts to connect to a port and if the port is not connectible, waits 1 second and moves to the next port
                 result = s.connect_ex((target,port))    #returns an error indicator and stores it in the "result" variable
+                print("Checking port {}".format(port))
                 if result == 0:
                         print("Port {} is open".format(port))
                 s.close()   #closes the connection
